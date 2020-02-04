@@ -1,0 +1,90 @@
+\documentclass[fleqn]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{mathexam}
+
+\ExamClass{CSCE 240}
+\ExamName{Homework 1}
+\ExamHead{Due: 04 Feb 2020}
+
+\let
+\ds
+\displaystyle
+
+\begin{document}
+\ExamInstrBox {
+  You shall submit a zipped, \textbf{and only zipped}, archive of your homework
+  directory, hw1. The directory shall contain, at a minimum, the file
+  \texttt{binary\_converter.cc}. Your submission file must be named hw1.zip. \\
+
+  I will use my own makefile to make your \texttt{binary\_converter.cc} file. Do
+  not use a header for this assignment. My grader will not look for one.
+}
+%
+Everyone in computing should have a basic understanding of binary integers. To
+that end, you will write an app to convert decimal to binary.
+%
+\vspace{1.0em} \\
+The application should perform as follows:
+\begin{itemize}
+	\item The program is called and runs with no prompt for input.
+
+	\item The first value provided to the standard input stream shall be an
+	integer and be interpreted as the number of bits of binary output. This
+	value should be something in the range [1, 31]. Do be careful, sometimes I
+	get careless and enter values outside this range. If that happens, the app 
+	should quietly exit with a value of 1.
+
+  \item The second value provided is the decimal integer to be converted.
+  Though I can guarantee that you will see values in the range [$0,\
+  2^{31}-1$], I am sometimes careless about the number of bits required to
+  represent a decimal integer. If I make a mistake by entering a value too
+  large for the number of bits, that is on me and you should still only print
+  the number of bits requested. If I enter a negative value, do not print a
+  two's complement; again, quietly exit, this time with a value of 2.
+
+  \item An algorithm to convert decimal number, $n$,  to binary (without
+    arrays):
+    \begin{enumerate}
+      \item Use loop to calculate the largest power of 2, call it $i$, in $n$,
+        print a 1 and subtract $2^i$ from $n$.\footnote{Do not forget to check
+        whether this exponent is less than or equal to the first integer passed
+        to standard input. If it is outside that value, you should subtract as
+        indicated, but not print. You should then find the next largest
+        exponent and try again.}
+      \item For each exponent, $j$, from $i - 1$ down to $0$,
+        \begin{enumerate}
+          \item if that $2^j \leq n$, print a $1$ and subtract $2^j$ from $n$
+          \item otherwise if that $n < 2^j$, print a $0$.
+        \end{enumerate}
+    \end{enumerate}
+    There are other algorithms which are easier as well as improvements to this
+    algorithm. You should not solve this with an array (or string). That
+    defeats the purpose of the assignment.
+\end{itemize}
+%
+%
+I provided you with a test file to test your code. You should ensure that your
+code satisfies the tester's requirements. It is the tool I will use to grade
+your submissions. I will only change the input and expected values. \\
+%
+To utilize the tester, you will need access to a python3 interpreter. The tester
+can be called using the make file, assuming that \texttt{python3} is in your
+path and that your present working directory is \texttt{../hw1}
+%
+\section*{Point Awards}
+Correctly converting and printing a valid value is worth 2 points. Correctly
+catching an incorrect number of bits is worth $\frac{1}{2}$ points. Correctly
+catching negative decimal input is worth $\frac{1}{2}$ points. Style is worth 2 points.
+\vspace{1.0em}
+%
+I have provided you a make file. You should definitely read the
+makefile and I would encourage you to read the python tester.\\
+\\
+%
+Late assignments will lose 25\% per day late, with no assignment begin accepted
+after 4 days (100\% reduction in points).\\
+\\
+%
+Check your syllabus for further caveats of grading.
+\end{document}
+
