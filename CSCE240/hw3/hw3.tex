@@ -1,0 +1,59 @@
+\documentclass[fleqn]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{mathexam}
+\usepackage{verbatim}
+
+\ExamClass{CSCE 240}
+\ExamName{Homework 3}
+\ExamHead{Due: 17 March 2020}
+
+\let
+\ds
+\displaystyle
+
+\begin{document}
+\ExamInstrBox {
+  You shall submit a zipped, \textbf{and only zipped}, archive of your homework
+  directory, hw3. The directory shall contain, at a minimum, the files
+  \texttt{src/sum\_finder.cc} and \texttt{inc/sum\_finder.h}. Name the archive
+  submission file hw3.zip \\
+
+  I will use my own makefile to compile and link to your
+  \texttt{src/sum\_finder.cc} and \texttt{inc/sum\_finder.h} files. You must
+  submit, at least, these two files.
+}
+%
+Sometimes when I sit in restaurants waiting on food, I request the children's
+menu to play the games. One of my favorites is the word puzzle in which you
+search for words hidden in a scramble of letters. I began to work out a
+solution to this game programmatically. That seemed a little simple, so I
+decided to have you solve the problem of a scramble of integers, finding the
+sub-row or sub-column which sums to another integer.\\
+%
+\\
+You will provide me with a library containing (at least) the function
+\texttt{FindSum} as demonstrated in the file \texttt{sum\_finder.cc}. You
+should read the header file as well as my test file to understand what is
+expected from the library.  Do note that the preconditions keep you from any
+unpleasantness due to array bounds and the like. \\
+%
+\\
+I have provided you a basic test application which you can use to ensure that
+your code is, at least partially, correct. I would suggest a more rigorous
+testing scheme to ensure that your methods handle any edge cases. \\
+%
+\\
+Late assignments will lose 10\% per day late, with no assignment begin accepted
+after 3 days (at 100\% reduction in points).\\
+\\
+%
+You will receive 1.5 points for each if your \texttt{FindSum} function finds:
+\begin{itemize}
+  \item horizontal summation left-to-right,
+  \item horizontal summation right-to-left,
+  \item vertical summations top-to-bottom,
+  \item vertical summations bottom-to-top,
+  \item that the summation does not exist (2 points)
+\end{itemize}
+\end{document}
+

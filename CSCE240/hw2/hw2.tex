@@ -1,0 +1,60 @@
+\documentclass[fleqn]{article}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{mathexam}
+\usepackage{verbatim}
+
+\ExamClass{CSCE 240}
+\ExamName{Homework 2}
+\ExamHead{Due: 18 February 2020}
+
+\let
+\ds
+\displaystyle
+
+\begin{document}
+\ExamInstrBox {
+  You shall submit a zipped, \textbf{and only zipped}, archive of your homework
+  directory, hw2. The directory shall contain, at a minimum, the files
+  \texttt{parse\_scores.cc} and \texttt{parse\_scores.h}. Name the archive
+  submission file hw2.zip \\
+
+  I will use my own makefile to compile and link to your
+  \texttt{parse\_scores.cc} and \texttt{parse\_scores.h} files. You must submit,
+  at least, these two files.
+}
+%
+This assignment tests your ability to parse data based on a provided format.
+The premise is a text-based grade book with which you will interact using basic
+file I/O. You will provide a small library of three functions:
+\begin{itemize}
+  \item \texttt{GetGrade}
+  \item \texttt{GetMaxGradeStudentId}
+  \item \texttt{GetAvgGrade}
+\end{itemize}
+%
+The functions shall accept a character string which can be used to open a file
+with an \texttt{fstream} object.
+\\
+%
+\\
+The file format is described as: number\_of\_students student\_id
+number\_of\_grades grade\_0 grade\_1 grade\_n \\
+\\
+Read the provided header file documentation for instructions on how the
+functions should work. \\
+%
+\\
+I have provided you a basic test app which you can use to ensure that your code
+is somewhat passing. I would suggest a much more rigorous testing scheme. Your
+code must behave as indicated in the documentation. Passing the tests is not
+enough to get full credit. You may call the test by using \\
+\texttt{./test\_parse\_scores gradebook.txt} \\
+%
+\\
+Late assignments will lose 10\% per day late, with no assignment begin accepted
+after 3 days.\\
+\\
+%
+Check your syllabus for the breakdown of grading.
+\end{document}
+

@@ -1,0 +1,4 @@
+1. In order to seperate students, use an outer loop
+2. Use an inner loop to go over the number of grades per student
+3. When making GetMaxGradeStudent, keep looping over grades and store current highest in a temp variable until all grades have been run through.
+4. 
